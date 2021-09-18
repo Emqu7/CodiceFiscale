@@ -64,7 +64,7 @@ void surnameCoder()
         }
         else if (surname[i] == 'n' || surname[i] == 'N')
         {
-            fiscalCode[counter] = 'B';
+            fiscalCode[counter] = 'N';
             counter++;
         }
         else if (surname[i] == 'p' || surname[i] == 'P')
@@ -410,7 +410,7 @@ void nameCoder()
             }
             else if (name[i] == 'n' || name[i] == 'N')
             {
-                fiscalCode[counter] = 'B';
+                fiscalCode[counter] = 'N';
                 counter++;
             }
             else if (name[i] == 'p' || name[i] == 'P')
@@ -42121,29 +42121,29 @@ void codeCoder()
 
 int main()
 {
-    cout << "Insert Surname: ";
+    cout << "Inserisci il cognome: ";
     cin >> surname;
 
-    cout << "Insert Name: ";
+    cout << "Inserisci il nome: ";
     cin >> name;
 
     finished = false;
     while (finished == false)
     {
-        cout << "Insert Day of Birth: ";
+        cout << "Inserisci il giorno di nascita: ";
         cin >> day;
         if (day > 31)
         {
-            cout << "ERROR: There can't be more than 31 days in a month." << endl;
+            cout << "ERRORE: Non ci possono essere più di 31 giorni in un mese." << endl;
         }
         else
         {
-            cout << "Insert Month of Birth (number): ";
+            cout << "Inserisci il mese di nascita (numero): ";
             cin >> month;
 
             if (month == 2 && day > 29)
             {
-                cout << "ERROR: There can't be more than 29 days in February." << endl;
+                cout << "ERRORE: Non ci possono essere più di 29 giorni in febbraio." << endl;
             }
             else if (month == 4 ||
                      month == 6 ||
@@ -42152,20 +42152,20 @@ int main()
             {
                 if (day > 30)
                 {
-                    cout << "ERROR: There can't be more than 30 days in that month." << endl;
+                    cout << "ERRORE: Non ci possono essere piu' di 30 giorni in quel mese." << endl;
                 }
                 else
                 {
-                    cout << "Insert Year of Birth: ";
+                    cout << "Inserisci l'anno di nascita: ";
                     cin >> year;
 
                     if (year < 1931)
                     {
-                        cout << "ERROR: The year can't be less than 1931." << endl;
+                        cout << "ERRORE: l'anno non puo' essere meno di 1931." << endl;
                     }
                     else if (year > 2030)
                     {
-                        cout << "ERROR: The year can't be more than 2030." << endl;
+                        cout << "ERRORE: L'anno non può essere piu' di 2030." << endl;
                     }
                     else
                     {
@@ -42175,20 +42175,20 @@ int main()
             }
             else if (month < 12 && month > 0)
             {
-                cout << "Insert Year of Birth: ";
+                cout << "Inserisci l'anno di nascita: ";
                 cin >> year;
 
                 if (year < 1931)
                 {
-                    cout << "ERROR: The year can't be less than 1931." << endl;
+                    cout << "ERRORE: l'anno non puo' essere meno di 1931." << endl;
                 }
                 else if (year > 2030)
                 {
-                    cout << "ERROR: The year can't be more than 2030." << endl;
+                    cout << "ERRORE: L'anno non può essere piu' di 2030." << endl;
                 }
                 else if (month == 2 && day > 28 && year % 2 != 0)
                 {
-                    cout << "ERROR: There can't be more than 28 days in February " << year << "." << endl;
+                    cout << "ERRORE: Non ci possono essere errori nel febbraio del " << year << "." << endl;
                 }
                 else
                 {
@@ -42197,7 +42197,7 @@ int main()
             }
             else
             {
-                cout << "ERROR: Invalid number of months." << endl;
+                cout << "ERRORE: Numero invalido di mesi." << endl;
             }
         }
     }
@@ -42205,7 +42205,7 @@ int main()
     finished = false;
     while (finished == false)
     {
-        cout << "Insert Sex (M or F): ";
+        cout << "Inserisci il genere (M or F): ";
         cin >> sex;
 
         if (sex != "F" &&
@@ -42213,7 +42213,7 @@ int main()
             sex != "M" &&
             sex != "m")
         {
-            cout << "ERROR: This gender does not exist." << endl;
+            cout << "ERRORE: Questo genere non esiste." << endl;
         }
         else
         {
@@ -42224,7 +42224,7 @@ int main()
     finished = false;
     while (finished == false)
     {
-        cout << "Insert Place of Birth (use CAPS and don't use spaces): ";
+        cout << "Inserisci il luogo di nascita (usare il CAPS e non usare spazi): ";
         cin >> city;
         cityCoder();
     }
@@ -42240,9 +42240,9 @@ int main()
     dayCoder();
     codeCoder();
 
-    cout << "\n\n";
+    cout << "\n";
 
-    cout << "The fiscal code is: " << fiscalCode;
+    cout << "Il codice fiscale e': " << fiscalCode;
 
     cout << "\n\n";
     system("pause");
